@@ -1,0 +1,66 @@
+//
+// Component: Pagination
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@pagination-margin-left:						0;
+@pagination-line-height:                        30px;
+@pagination-background:							#EBEBEB;
+@pagination-color:                              @global-color;
+@pagination-hover-background:                   #DEDEDE;
+@pagination-hover-color:                        @global-color;
+@pagination-onclick-background:                 darken(@pagination-hover-background, 10%);
+@pagination-onclick-color:                      @global-color;
+
+@pagination-active-background:                  #DEDEDE;
+@pagination-active-color:                       #646070;
+
+@pagination-disabled-color:                     @global-muted-color;
+
+
+// Component
+// ========================================================================
+
+//
+// Items
+//
+
+.hook-pagination-item() {}
+
+// Link
+.hook-pagination-link() {}
+
+.hook-pagination-link-hover() {
+	font-weight: 600;
+}
+
+.hook-pagination-link-active() {
+	font-weight: 600;
+}
+
+// Active
+.hook-pagination-active() {
+	font-weight: 600;
+}
+
+// Disabled
+.hook-pagination-disabled() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-pagination-misc() {
+	.uk-pagination > li > .uk-active {
+	    background: @pagination-active-background;
+	    color: @pagination-active-color;
+	}
+	.uk-pagination > li > span {
+	    background-color: @pagination-disabled-background;
+	    color: @pagination-disabled-color;
+	}
+}

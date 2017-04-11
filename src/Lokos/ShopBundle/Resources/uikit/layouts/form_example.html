@@ -1,0 +1,237 @@
+<div class="uk-container uk-container-center">
+    <div class="uk-panel tm-vertical-aligner-custom">    
+        <h1 class="uk-align-left">Form layouts</h1>
+        <div class="uk-align-right">
+            <button class="uk-button" data-uk-tooltip="{pos:'top'}" title="Lorem ipsum dolor set amet">
+                <i class="uk-icon-arrow-left"></i>
+                Previous
+            </button>
+            <button class="uk-button" data-uk-tooltip="{pos:'left'}" title="Lorem ipsum dolor <br /> set amet">
+                Next
+                <i class="uk-icon-arrow-right"></i>
+            </button>
+            <button class="uk-button uk-button-success" data-uk-tooltip="{pos:'right'}" title="Lorem <b>ipsum</b> dolor set amet"> 
+                <i class="uk-icon-plus"></i>
+                Add
+            </button>
+            <button class="uk-button uk-button-primary" data-uk-tooltip="{pos:'bottom'}" title="Lorem ipsum dolor <br /> set amet">
+                Save
+            </button>
+            <button class="uk-button uk-button-danger">
+                Cancel
+            </button>
+        </div>
+    </div>
+    <form class="uk-form uk-form-horizontal">
+        <fieldset>
+            <div class="uk-form-row">
+                <div class="uk-grid">
+                    <div class="uk-width-1-2">
+                        <label class="uk-form-label" for="form-h-it">
+                            Text input
+                            <i class="tm-icon-reqired"></i>
+                        </label>
+                        <div class="uk-form-controls">
+                            <input class="uk-width-1-1" type="text" id="form-h-it" placeholder="Text input">
+                        </div>
+                    </div>
+                    <div class="uk-width-1-2">
+                        <label class="uk-form-label" for="form-h-it">
+                            Text input
+                            <span class="tm-form-annotation">(with annotation)</span>
+                        </label>
+                        <div class="uk-form-controls">
+                            <input class="uk-width-1-1" type="text" id="form-h-it" placeholder="Text input">
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-grid">
+                    <div class="uk-width-1-2">
+                        <label class="uk-form-label" for="form-h-it">
+                            Dropdown
+                            <i class="tm-icon-reqired"></i>
+                        </label>
+                        <div class="uk-form-controls">
+                            <div class="uk-button-dropdown uk-width-1-1" data-uk-dropdown="{mode:'click'}">
+                                <button class="uk-button uk-width-1-1">
+                                    Dropdown
+                                    <i class="uk-icon-chevron-down"></i>
+                                </button>
+                                <div class="uk-dropdown">
+                                    <ul class="uk-nav uk-nav-dropdown">
+                                        <li><a>Option 1</a></li>
+                                        <li><a href="">Option 2</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-width-1-2 tm-arrow-marker">
+                        <label class="uk-form-label" for="form-h-it">
+                            Select as dropdown
+                        </label>
+                        <div class="uk-form-controls">
+                            <div class="uk-button uk-form-select uk-width-1-1" data-uk-form-select>
+                                <span>Option 01</span>
+                                <i class="uk-icon-chevron-down"></i>
+                                <select>
+                                    <option value="">Option 1</option>
+                                    <option value="">Option 2</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="uk-form-row">
+                <label class="uk-form-label" for="form-h-it">
+                    Datepicker
+                    <span class="tm-form-annotation">(click to select)</span>
+                </label>
+                <div class="uk-form-controls">
+                    <input type="" data-uk-datepicker="{format:'DD.MM.YYYY'}">
+                    <span class="tm-text-highlighted">0 of 326 users selected</span>
+                </div>
+            </div>
+
+            <div class="uk-form-row">
+                <label class="uk-form-label" for="form-h-it">
+                    Number
+                </label>
+                <div class="uk-form-controls">
+                    <input type="number" min="0" max="99" value="50" >
+                </div>
+            </div>
+
+            <div class="uk-form-row">
+                <label class="uk-form-label" for="form-h-it">
+                    Logo
+                </label>
+                <div class="uk-form-controls">
+                    <div class="uk-form-file">
+                        <button class="uk-button uk-button-success uk-button-small">
+                            <i class="uk-icon-plus"></i>
+                            Upload file
+                        </button>
+                        <input type="file">
+                    </div>
+                    <div class="tm-form-file-hint">
+                        Supported file formats <br />JPG, GIF, PNG
+                    </div>
+                </div>
+            </div>
+
+            <div class="uk-form-row">
+                <label class="uk-form-label" for="form-h-it">
+                    Inputs
+                </label>
+                <div class="uk-form-controls">
+                    <input type="text" placeholder="" class="uk-form-width-large">
+                    <input type="text" placeholder="" class="uk-form-width-medium">
+                    <input type="text" placeholder="" class="uk-form-width-small">
+                    <input type="text" placeholder="" class="uk-form-width-mini">
+                </div>
+            </div>
+
+            <div class="uk-form-row">
+                <label class="uk-form-label" for="form-h-it">
+                    Datepicker
+                    <span class="tm-form-annotation">(click to select)</span>
+                </label>
+                <div class="uk-form-controls">
+                    <textarea class="uk-width-1-1" cols="20" rows="3" placeholder="Textarea placeholder"></textarea>
+                    <p class="uk-form-help-block">Form help block</p>
+                </div>
+            </div>
+        </fieldset>
+        <div class="tm-form-fieldset">
+            <h3>Settings</h3>
+            <div class="uk-form-row">
+                <div class="uk-grid">
+                    <div class="uk-width-4-10">
+                        <div class="uk-form-row">
+                            <label class="uk-form-label" for="form-h-it">
+                                Text input
+                                <i class="tm-icon-reqired"></i>
+                            </label>
+                            <div class="uk-form-controls">
+                                <input class="uk-width-1-1" type="text" id="form-h-it" placeholder="Text input">
+                            </div>
+                        </div>
+                        <div class="uk-form-row">
+                            <label class="uk-form-label" for="form-h-it">
+                                Text input
+                                <i class="tm-icon-reqired"></i>
+                            </label>
+                            <div class="uk-form-controls">
+                                <input class="uk-width-1-1" type="text" id="form-h-it" placeholder="Text input">
+                            </div>
+                        </div>
+                        <div class="uk-form-row">
+                            <label class="uk-form-label" for="form-h-it">
+                                Text input
+                                <i class="tm-icon-reqired"></i>
+                            </label>
+                            <div class="uk-form-controls">
+                                <input class="uk-width-1-1" type="text" id="form-h-it" placeholder="Text input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-width-6-10">
+                        <table class="uk-table tm-table">
+                            <tbody>
+                                <tr>
+                                    <td class="uk-text-middle">
+                                        <label class="uk-text-bold">
+                                            <input type="checkbox">
+                                            Energy &amp; GHG module
+                                        </label>
+                                    </td>
+                                    <td class="uk-text-middle">
+                                        <span class="uk-vertical-align-middle">per year</span>
+                                    </td>
+                                    <td>
+                                        <input type="" data-uk-datepicker="{format:'DD.MM.YYYY'}">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="uk-text-middle">
+                                        <label class="uk-text-bold">
+                                            <input type="checkbox">
+                                            Energy &amp; GHG module
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <div class="uk-button-dropdown" data-uk-dropdown="{mode:'click'}">
+                                            <button class="uk-button">
+                                                Every 6 month
+                                                <i class="uk-icon-chevron-down"></i>
+                                            </button>
+                                            <div class="uk-dropdown uk-dropdown-small">
+                                                <ul class="uk-nav uk-nav-dropdown">
+                                                    <li><a href>Option 1</a></li>
+                                                    <li><a href>Option 2</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="" data-uk-datepicker="{format:'DD.MM.YYYY'}">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th>Module access</th>
+                                    <th>Reporting format</th>
+                                    <th>Last day for reporting</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

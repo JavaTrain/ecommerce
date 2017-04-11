@@ -1,0 +1,142 @@
+<div class="uk-container uk-container-center">
+    <div class="uk-panel tm-vertical-aligner-custom">    
+        <h1 class="uk-align-left">Form layouts</h1>
+        <div class="uk-align-right">
+            <button class="uk-button">
+                <i class="uk-icon-arrow-left"></i>
+                Previous
+            </button>
+            <button class="uk-button">
+                Next
+                <i class="uk-icon-arrow-right"></i>
+            </button>
+            <button class="uk-button uk-button-success">
+                <i class="uk-icon-plus"></i>
+                Add
+            </button>
+            <button class="uk-button uk-button-primary">Save</button>
+            <button class="uk-button uk-button-danger">Cancel</button>
+        </div>
+    </div>
+
+    <div class="uk-panel uk-margin-bottom tm-vertical-aligner-custom">
+        <div class="uk-align-left uk-h2">Scope 1</div>
+        <div class="uk-align-right">
+            <div class="uk-button-group" data-uk-button-radio>
+                <button class="uk-button">Category</button>
+                <button class="uk-button">Full list</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="tm-accordion" data-uk-accordion="{toggle: '[data-accordion-toggle]', containers: '[data-accordion-content]', showfirst: true, collapse: true}">
+        <div class="tm-accordion-header">
+            <div class="uk-panel">
+                <i class="tm-icon-1"></i>
+                <span class="uk-text-large uk-text-bold uk-text-middle">Process emission</span>
+                <span class="tm-text-highlighted tm-text-success">112</span>
+                <span class="tm-accordion-toggle" data-accordion-toggle>
+                    <i class="uk-icon-chevron-circle-down"></i>
+                </span>
+            </div>
+            <div class="tm-accordion-content" data-accordion-content>
+                <table class="uk-table uk-table-striped uk-table-hover uk-table-condensed tm-table">
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td class="uk-text-middle">
+                                Electric car, Nordic mix
+                            </td>
+                            <td class="uk-text-middle">
+                                <span class="uk-vertical-align-middle">s2-1065</span>
+                            </td>
+                            <td>
+                                <span class="uk-vertical-align-middle">pkW, km, kWh</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td class="uk-text-middle">
+                                Electricity Argentina
+                            </td>
+                            <td class="uk-text-middle">
+                                <span class="uk-vertical-align-middle">s2-1065</span>
+                            </td>
+                            <td>
+                                <span class="uk-vertical-align-middle">pkW, km, kWh</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox">
+                            </th>
+                            <th class="tm-sorting-asc" data-tm-sortable>
+                                Module access
+                                <div class="tm-sorting">
+                                    <div class="tm-sorting-desc">
+                                        <i class="uk-icon-chevron-up"></i>
+                                    </div>
+                                    <div class="tm-sorting-asc">
+                                        <i class="uk-icon-chevron-down"></i>
+                                    </div>
+                                </div>
+                            </th>
+                            <th data-tm-sortable>
+                                Reporting format
+                                <div class="tm-sorting">
+                                    <div class="tm-sorting-desc">
+                                        <i class="uk-icon-chevron-up"></i>
+                                    </div>
+                                    <div class="tm-sorting-asc">
+                                        <i class="uk-icon-chevron-down"></i>
+                                    </div>
+                                </div>
+                            </th>
+                            <th data-tm-sortable>
+                                Last day for reporting
+                                <div class="tm-sorting">
+                                    <div class="tm-sorting-desc">
+                                        <i class="uk-icon-chevron-up"></i>
+                                    </div>
+                                    <div class="tm-sorting-asc">
+                                        <i class="uk-icon-chevron-down"></i>
+                                    </div>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+
+        <div class="tm-accordion-header">
+            <div class="uk-panel">
+                <i class="tm-icon-2"></i>
+                <span class="uk-text-large uk-text-bold uk-text-middle">Stationary combustion</span>
+                <span class="tm-accordion-toggle" data-accordion-toggle>
+                    <i class="uk-icon-chevron-circle-down"></i>
+                </span>
+            </div>
+            <div class="tm-accordion-content" data-accordion-content>
+                Content
+            </div>
+        </div>
+
+        <div class="tm-accordion-header">
+            <div class="uk-panel">
+                <i class="tm-icon-3"></i>
+                <span class="uk-text-large uk-text-bold uk-text-middle">Transportation</span>
+                <span class="tm-accordion-toggle" data-accordion-toggle>
+                    <i class="uk-icon-chevron-circle-down"></i>
+                </span>
+            </div>
+            <div class="tm-accordion-content" data-accordion-content>
+                Content
+            </div>
+        </div>
+
+    </div>
+
+</div>

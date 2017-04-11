@@ -1,0 +1,32 @@
+/*
+ * IE Specific Styles
+ */
+
+@tm-ie-9-10-media-min-width:			0\0;
+
+/*
+ * IE9, IE10 Start
+ */
+
+@media screen and (min-width:@tm-ie-9-10-media-min-width) {
+
+// Validated Field
+    .error {
+
+		&>input, 
+		&>textarea, 
+		&>.uk-button, 
+		&.uk-form-select, 
+		&>.mjs-selectbox .mjs-sb-header {
+			.box-shadow(@color: @tm-validator-error, @blur: 4px, @spread: 1px, @inset: ~'');
+		}
+	}
+// Alphabetical Item
+	.tm-alphabetical-item {
+		border: 1px solid transparent;
+	}
+}
+
+/*
+ * IE9, IE10 Start
+ */

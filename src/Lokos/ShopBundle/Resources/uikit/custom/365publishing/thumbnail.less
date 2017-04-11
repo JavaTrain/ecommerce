@@ -1,0 +1,45 @@
+//
+// Component: Thumbnail
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@thumbnail-padding:                             @global-margin;
+@thumbnail-border:                              @global-border;
+@thumbnail-background:                          @global-background;
+@thumbnail-hover-border:                        darken(@global-border, 20%);
+@thumbnail-hover-background:                    @global-background;
+
+@thumbnail-caption-color:                       @global-color;
+
+
+// Component
+// ========================================================================
+
+.hook-thumbnail() {
+	position: relative;
+}
+
+.hook-thumbnail-hover() {}
+
+
+// Caption
+// ========================================================================
+
+.hook-thumbnail-caption() {
+	margin-left: -@thumbnail-padding;
+	margin-right: -@thumbnail-padding;
+	padding-left: @thumbnail-padding;
+	padding-right: @thumbnail-padding;
+	border-top: @thumbnail-border-width solid @thumbnail-border;
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-thumbnail-misc() {
+}

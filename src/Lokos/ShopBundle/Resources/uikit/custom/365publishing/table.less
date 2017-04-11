@@ -1,0 +1,123 @@
+//
+// Component: Table
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@table-padding-vertical:                        8px;
+@table-padding-horizontal:                      8px;
+
+@table-margin-vertical:                         @global-margin;
+
+@table-caption-color:                           @global-muted-color;
+@table-caption-font-size:                       round((@global-font-size * 0.85)); // 12px / 14px
+
+@table-striped-background:                      fade(#E7E7E7, 0);
+@table-hover-background:						fade(#D6D6D6, 0);
+
+
+// Component
+// ========================================================================
+
+.hook-table() {}
+
+.hook-table-active() {}
+
+.hook-table-striped() {}
+
+.hook-table-condensed() {}
+
+.hook-table-hover() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-table-misc() {
+	// Condenced horizontally
+	.uk-table-condensed {
+		width: auto;
+	}
+
+	.uk-table {
+		font-size: @global-font-size;
+	}
+
+	.uk-table th {
+		padding-left: @table-padding-horizontal; // was (* 2), removed for consistency with "tm-cell-header" f.e. on report
+		font-weight: 300;
+
+		&[data-tm-sortable]:hover {
+			background-color: #D1D8D9;
+		}
+		&[data-tm-sortable] {
+			padding-right: 2em;
+		}
+
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 10%;
+			bottom: 10%;
+			border-left: @global-border-width solid #D1D8D9;
+		}
+		&:first-child:before,
+		&[data-tm-sortable]:hover + th:before,
+		&.tm-sorting-asc:before,
+		&.tm-sorting-desc:before {
+			display: none;
+		}
+	}
+
+	.uk-table th.uk-form {
+		vertical-align: middle;
+	}
+	.uk-table.uk-form,
+	.uk-table th.uk-form, 
+	.uk-table td.uk-form {
+
+		input[type="radio"],
+		input[type="checkbox"] {
+			margin-top: 2px;
+		}
+	}
+	// Caption and footer
+	.uk-table tfoot {
+	    font-size: inherit;
+	    font-style: inherit;
+	}
+	// Table Content Modifiers
+	.uk-table {
+
+		.uk-button, 
+		.uk-button-small,
+		.uk-button-dropdown {
+			margin: -@table-padding-vertical auto;
+		}
+		.uk-button-dropdown .uk-button {
+			margin: 0;
+		}
+	}
+	// Table Row Modifiers
+	.tm-row-compact td, 
+	.tm-row-compact th {
+		height: auto;
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
+	}
+	// Table Body Separator
+	.tm-table-body-separator {
+
+		td, 
+		th {
+			height: @table-padding-vertical;
+			padding-top: 0 !important;
+			padding-bottom: 0 !important;
+		}
+	}
+}

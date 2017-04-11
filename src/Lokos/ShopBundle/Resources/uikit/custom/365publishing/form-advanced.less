@@ -1,0 +1,60 @@
+//
+// Component: Form advanced
+//
+// ========================================================================
+
+// Variables
+// ========================================================================
+
+@form-advanced-border:                        #CCC;
+@form-advanced-color:                         @global-background;
+
+@form-advanced-disabled-border:               #E3E3E3;
+@form-advanced-disabled-background:           #F0F0F0;
+@form-advanced-disabled-color:                #aaa;
+
+
+// Component
+// ========================================================================
+
+.hook-form-advanced() {
+	&:hover {
+		background-color: #E8E8E8;
+	}
+
+	&.tm-control-large {
+		width: 20px;
+		height: 20px;
+	}
+}
+
+.hook-form-advanced-checked() {}
+
+.hook-form-advanced-radio() {}
+
+.hook-form-advanced-checkbox() {}
+
+.hook-form-advanced-disabled() {
+	border-color: @form-advanced-disabled-border !important;
+	background-color: @form-advanced-disabled-background !important;
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-form-advanced-misc() {
+	.uk-form input[type="checkbox"].tm-control-large {
+		border-radius: 2px;
+	}
+	.uk-form input[type=radio].tm-control-large:checked:before {
+		width: 10px;
+		height: 10px;
+		margin-top: 4px;
+	}
+	.uk-form input[type=checkbox].tm-control-large:checked:before,
+	.uk-form input[type=checkbox].tm-control-large:indeterminate:before {
+		font-size: 18px;
+		line-height: 18px;
+	}
+}

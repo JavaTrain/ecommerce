@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="22px" height="16px" viewBox="4 7 22 16" enable-background="new 4 7 22 16" xml:space="preserve">
+<symbol  id="OpenCat" viewBox="-15 -15 30 30">
+	<path fill="#FFFFFF" d="M4.943,3C5.297,2.065,5.5,1.057,5.5,0H11v3H4.943z"/>
+	<path fill="#FFFFFF" d="M5.436-1C5.31-2.073,4.985-3.086,4.496-4H11v3H5.436z"/>
+	<path fill="#FFFFFF" d="M3.858-5C2.86-6.366,1.467-7.421-0.155-8H11v3H3.858z"/>
+	<path fill="#FFFFFF" d="M-3,8c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8S1.418,8-3,8z M1-1h-3v-3h-2v3h-3v2h3v3h2V1h3V-1z"/>
+	<polygon fill="none" points="15,-15 -15,-15 -15,15 15,15 	"/>
+</symbol>
+<use xlink:href="#OpenCat"  width="30" height="30" id="XMLID_1_" x="-15" y="-15" transform="matrix(1 0 0 -1 15 15)" overflow="visible"/>
+</svg>

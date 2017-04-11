@@ -1,0 +1,318 @@
+//
+// Component: Icon
+//
+// ========================================================================
+
+
+
+// Variables
+// ========================================================================
+
+@icon-hover-color:                              @global-muted-color;
+@icon-hover-hover-color:                        @global-color;
+
+@icon-button-width:                             @button-height;
+@icon-button-height:                            @icon-button-width;
+@icon-button-background:                        #F1F2ED;
+@icon-button-font-size:                         round((@icon-button-width * 0.7));
+@icon-button-color:                             #0097CE;
+
+@icon-button-hover-color:                       @global-color;
+
+@icon-button-active-color:                      @global-color;
+
+@global-base-images-url:							"../../../custom/365publishing/images";
+// @global-base-images-url:						"custom/cema/images";
+@global-base-fonts-url:							"../../../custom/365publishing/fonts";
+
+
+// Fonts Import
+@font-face {
+	font-family: 'icomoon';
+	src:url('/@{global-base-fonts-url}/icomoon.eot');
+	src:url('/@{global-base-fonts-url}/icomoon.eot#iefix') format('embedded-opentype'),
+		url('/@{global-base-fonts-url}/icomoon.ttf') format('truetype'),
+		url('/@{global-base-fonts-url}/icomoon.woff') format('woff'),
+		url('/@{global-base-fonts-url}/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+// Modifier: `uk-icon-hover`
+// ========================================================================
+
+.hook-icon-hover() {}
+
+.hook-icon-hover-hover() {}
+
+
+// Modifier: `uk-icon-button`
+// ========================================================================
+
+.hook-icon-button() {
+    vertical-align: middle;
+}
+
+// Hover
+.hook-icon-button-hover() {}
+
+// Active
+.hook-icon-button-active() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-icon-misc() {
+
+	// Common Icons Styles
+	[class*="tm-icon-"] {
+		.font-icon();
+	}
+
+	// Extra Icons Styles
+	[class*="tm-icon-"]:before {
+		content: '';
+		width: 2em;
+		height: 1.5em;
+		display: inline-block;
+		vertical-align: middle;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		background-size: contain;
+	}
+
+	// Icons
+
+	// Modules
+	.tm-icon-module-1:before {
+	    background-image: url("/@{global-base-images-url}/icon-supply-chain.svg?v1.1.3");
+	}
+	.tm-icon-module-1-theme:before {
+		background-image: url("/@{global-base-images-url}/icon-supply-chain-theme.svg?v1.1.3");
+	}
+	.tm-icon-module-2:before {
+		background-image: url("/@{global-base-images-url}/icon-portfolio.svg?v1.1.3");
+	}
+	.tm-icon-module-2-theme:before {
+		background-image: url("/@{global-base-images-url}/icon-portfolio-theme.svg?v1.1.3");
+	}
+	.tm-icon-module-3:before {
+		background-image: url("/@{global-base-images-url}/icon-carbon-energy.svg?v1.1.3");
+	}
+	.tm-icon-module-3-theme:before {
+		background-image: url("/@{global-base-images-url}/icon-carbon-energy-theme.svg?v1.1.3");
+	}
+	.tm-icon-module-4:before {
+		background-image: url("/@{global-base-images-url}/icon-environmental-report.svg?v1.1.3");
+	}
+	.tm-icon-module-4-theme:before {
+		background-image: url("/@{global-base-images-url}/icon-environmental-report-theme.svg?v1.1.3");
+	}
+	.tm-icon-module-5:before {
+		background-image: url("/@{global-base-images-url}/icon-deviation-hse.svg?v1.1.3");
+	}
+	.tm-icon-module-5-theme:before {
+		background-image: url("/@{global-base-images-url}/icon-deviation-hse-theme.svg?v1.1.3");
+	}
+
+	// Content Types
+	.tm-icon-xls:before {
+		height: 2em;
+		margin-top: -.2em;
+		background-image: url("/@{global-base-images-url}/icon-xls.svg");
+	}
+	.tm-icon-picker:before{
+		background: url(../img/icon-color-picker.svg) no-repeat 25% 50% ~'/' 40% auto;
+		cursor: pointer;
+	}
+
+	// Misc
+	.tm-icon-chemistry:before {
+		background-image: url("/@{global-base-images-url}/icon-chemistry.svg");
+	}
+	.tm-icon-contact-us:before {
+		background-image: url("/@{global-base-images-url}/icon-contact-us.svg");
+	}
+	.tm-icon-document:before {
+		background-image: url("/@{global-base-images-url}/icon-document.svg");
+	}
+	.tm-icon-drops:before {
+		background-image: url("/@{global-base-images-url}/icon-drops.svg");
+	}
+	.tm-icon-globe:before {
+		background-image: url("/@{global-base-images-url}/icon-globe.svg");
+	}
+	.tm-icon-leaf:before {
+		background-image: url("/@{global-base-images-url}/icon-leaf.svg");
+	}
+	.tm-icon-plus:before {
+		background-image: url("/@{global-base-images-url}/icon-plus.svg");
+	}
+	.tm-icon-question-o:before {
+		background-image: url("/@{global-base-images-url}/icon-question-o.svg");
+	}
+	.tm-icon-resources:before {
+		background-image: url("/@{global-base-images-url}/icon-resources.svg");
+	}
+	.tm-icon-comments:before {
+		background-image: url("/@{global-base-images-url}/icon-comments.svg");
+	}
+	.tm-icon-1:before {
+		background-image: url("/@{global-base-images-url}/icon-1.svg");
+	}
+	.tm-icon-2:before {
+		background-image: url("/@{global-base-images-url}/icon-2.svg");
+	}
+	.tm-icon-3:before {
+		background-image: url("/@{global-base-images-url}/icon-3.svg");
+	}
+	.tm-icon-4:before {
+		background-image: url("/@{global-base-images-url}/icon-4.svg");
+	}
+	.tm-icon-5:before {
+		background-image: url("/@{global-base-images-url}/icon-5.svg");
+	}
+	.tm-icon-6:before {
+		background-image: url("/@{global-base-images-url}/icon-6.svg");
+	}
+	.tm-icon-7:before {
+		background-image: url("/@{global-base-images-url}/icon-7.svg");
+	}
+	.tm-icon-8:before {
+		background-image: url("/@{global-base-images-url}/icon-8.svg");
+	}
+
+	// Icomoon Icons
+	[class*="tm-icomoon-icon"] {
+		.font-icon(@font-family: 'icomoon';);
+	}
+	.tm-icomoon-icon-air-travel:before {
+		content: "\e800";
+	}
+	.tm-icomoon-icon-bio-carbon:before {
+		content: "\e801";
+	}
+	.tm-icomoon-icon-bio-energy-stationary-combustion:before {
+		content: "\e802";
+	}
+	.tm-icomoon-icon-bio-energy-transportation:before {
+		content: "\e803";
+	}
+	.tm-icomoon-icon-bio:before {
+		content: "\e804";
+	}
+	.tm-icomoon-icon-building-materials:before {
+		content: "\e805";
+	}
+	.tm-icomoon-icon-bus-travel:before {
+		content: "\e806";
+	}
+	.tm-icomoon-icon-commuting:before {
+		content: "\e807";
+	}
+	.tm-icomoon-icon-country:before {
+		content: "\e808";
+	}
+	.tm-icomoon-icon-csr-enviro:before {
+		content: "\e809";
+	}
+	.tm-icomoon-icon-emissions:before {
+		content: "\e80a";
+	}
+	.tm-icomoon-icon-group-transportation:before {
+		content: "\e80b";
+	}
+	.tm-icomoon-icon-health-and-safety:before {
+		content: "\e80c";
+	}
+	.tm-icomoon-icon-key-information:before {
+		content: "\e80d";
+	}
+	.tm-icomoon-icon-kpi:before {
+		content: "\e80e";
+	}
+	.tm-icomoon-icon-land-use-changed:before {
+		content: "\e80f";
+	}
+	.tm-icomoon-icon-location-and-buildings:before {
+		content: "\e810";
+	}
+	.tm-icomoon-icon-main:before {
+		content: "\e811";
+	}
+	.tm-icomoon-icon-monthly-report:before {
+		content: "\e812";
+	}
+	.tm-icomoon-icon-open-category:before {
+		content: "\e813";
+	}
+	.tm-icomoon-icon-other:before {
+		content: "\e814";
+	}
+	.tm-icomoon-icon-portfolio-2:before {
+		content: "\e815";
+	}
+	.tm-icomoon-icon-scope-1:before {
+		content: "\e816";
+	}
+	.tm-icomoon-icon-scope-2:before {
+		content: "\e817";
+	}
+	.tm-icomoon-icon-scope-3:before {
+		content: "\e818";
+	}
+	.tm-icomoon-icon-standard:before {
+		content: "\e819";
+	}
+	.tm-icomoon-icon-summary:before {
+		content: "\e81a";
+	}
+	.tm-icomoon-icon-unit:before {
+		content: "\e81b";
+	}
+	.tm-icomoon-icon-waste-2:before {
+		content: "\e81c";
+	}
+	.tm-icomoon-icon-water-withdrawal:before {
+		content: "\e81d";
+	}
+	.tm-icomoon-icon-yearly:before {
+		content: "\e81e";
+	}
+	.tm-icomoon-icon-dashboard:before {
+		content: "\e81f";
+	}
+	.tm-icomoon-icon-tables-excel:before {
+		content: "\e820";
+	}
+	.tm-icomoon-icon-monthly-pdf-report:before {
+		content: "\e821";
+	}
+	.tm-icomoon-icon-health:before {
+		content: "\e822";
+	}
+	.tm-icomoon-icon-safety:before {
+		content: "\e823";
+	}
+	.tm-icomoon-icon-csr:before {
+		content: "\e824";
+	}
+	.tm-icomoon-icon-customer:before {
+		content: "\e825";
+	}
+
+	// Icons As Pseudo Elements
+	.tm-wrapper-icon-gear a:before {
+		content: '\f013';
+		.font-icon();
+	}
+
+	// Icons Modifiers
+	.uk-button i.uk-text-large {
+		margin-right: .4em;
+	}
+
+}

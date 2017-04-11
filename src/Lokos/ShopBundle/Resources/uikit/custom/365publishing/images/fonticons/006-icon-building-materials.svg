@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="26px" height="18px" viewBox="5 6 26 18" enable-background="new 5 6 26 18" xml:space="preserve">
+<symbol  id="BuildMaterials" viewBox="-10.353 -8 21.353 14">
+	<g>
+		<path fill="#FFFFFF" d="M-3.305,4c-0.66-2.353-2.363-6.316-6.071-6.972L-8.706-8h9.059L2,4H-3.305z"/>
+		<path fill="#FFFFFF" d="M-5.026,4h-5.327l0.758-5.332C-7.029-0.808-5.657,1.96-5.026,4z"/>
+	</g>
+	<path fill="#FFFFFF" d="M-2,4c0,0-0.083,2-2,2s-2-2-2-2H-2z"/>
+	<polygon fill="#FFFFFF" points="0.5,-7 1,-4 4,-4 4,-7 	"/>
+	<polygon fill="#FFFFFF" points="2,-3 2,0 8,0 8,-3 	"/>
+	<polygon fill="#FFFFFF" points="5,-7 5,-4 11,-4 11,-7 	"/>
+</symbol>
+<use xlink:href="#BuildMaterials"  width="21.353" height="14" id="XMLID_1_" x="-10.353" y="-8" transform="matrix(1 0 0 -1 17.6765 14)" overflow="visible"/>
+</svg>

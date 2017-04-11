@@ -1,0 +1,190 @@
+{% trans_default_domain 'general' %}
+<!DOCTYPE html>
+<html>
+{% block head %}
+<head>
+    {% block head_meta %}
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    {% endblock head_meta %}
+
+    <title>{% block site_title %}{% block page_title %}{% endblock page_title %} - {{ 'site_title' |trans }}{% endblock site_title %}</title>
+
+    {% block styles %}
+        {% stylesheets
+        '@LokosShopBundle/Resources/public/css/uikit.365publishing.min.css'
+        %}
+        <link href="{{ asset_url }}" type="text/css" rel="stylesheet"/>
+        {% endstylesheets %}
+    {% endblock styles %}
+
+    {% block head_styles %}{% endblock head_styles %}
+
+    {% block head_scripts %}
+        {% javascripts
+        '@LokosShopBundle/Resources/public/js/jquery-2.1.4.js'
+        '@LokosShopBundle/Resources/public/js/uikit.min.js'
+        '@LokosShopBundle/Resources/public/js/core/core.min.js'
+        '@LokosShopBundle/Resources/public/js/components/tooltip.min.js'
+        '@LokosShopBundle/Resources/public/js/components/grid.min.js'
+        '@LokosShopBundle/Resources/public/js/components/sticky.min.js'
+        '@LokosShopBundle/Resources/public/js/components/accordion.min.js'
+        %}
+        <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endblock head_scripts %}
+    {% block page_script %}{% endblock page_script %}
+
+    {% block favicon %}
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/vnd.microsoft.icon" />
+    {% endblock favicon %}
+
+    </head>
+{% endblock head %}
+
+    <body>
+
+    {% block ajax_field_error_block %}
+        <div class="uk-hidden" id="ajaxFieldErrorTemplate">
+            <span class="tm-help-block">{message}</span>
+        </div>
+    {% endblock ajax_field_error_block %}
+
+    {% block wrapper %}
+        <div id="wrapper" class="uk-margin-large-bottom">
+            {% block nav %}
+
+            {% endblock nav %}
+            <div id="primary-content">
+                <div class="uk-container uk-container-center">
+                    {% block system_messages %}
+                        {% for label, flashes in app.session.flashbag.all %}
+                            {% for flash in flashes %}
+                                <div class="uk-alert uk-alert-{{ label }}" data-uk-alert>
+                                    <a class="uk-alert-close  uk-close"></a>
+                                    {{ flash }}
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                    {% endblock system_messages %}
+
+                    {% block content %}
+
+                    {% endblock content %}
+                </div>
+            </div>
+
+            {% block ie_reject %}
+                <!--[if lt IE 10]>
+                <div>
+                    <div>
+                        <p>
+                            {{ 'upgrade_browser'|trans }}
+                        </p>
+                        <ul>
+                            <li>
+                                <a class="chrome" href="http://www.google.com/chrome" target="_blank" title="Chrome">&nbsp;</a>
+                            </li>
+                            <li>
+                                <a class="firefox" href="http://www.mozilla.com/firefox/" target="_blank" title="Firefox">&nbsp;</a>
+                            </li>
+                            <li>
+                                <a class="opera" href="http://www.opera.com/" target="_blank" title="Opera">&nbsp;</a>
+                            </li>
+                            <li>
+                                <a class="safari" href="http://support.apple.com/downloads/#safari" target="_blank" title="Safari">&nbsp;</a>
+                            </li>
+                            <li>
+                                <a class="ie" href="http://windows.microsoft.com/en-US/internet-explorer/download-ie" target="_blank" title="Internet Explorer">&nbsp;</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <![endif]-->
+            {% endblock ie_reject %}
+
+        </div>
+    {% endblock wrapper %}
+
+    {% block footer %}
+        <footer class="tm-footer">
+            <div class="uk-container uk-container-center">
+                <div class="uk-grid">
+                    <div class="uk-width-1-3">
+                        <ul class="uk-list tm-footer-org">
+                            <li><div class="tm-footer-title">{{ 'site_title'|trans }}</div></li>
+                            <li>{{ 'footer.company'|trans }}</li>
+                        </ul>
+                        <div class="tm-footer-txt">{{ 'footer.social_media'|trans }}</div>
+                        <ul class="tm-footer-social">
+                            <li><a target="_blank" class="uk-icon-button uk-icon-facebook" href="https://nb-no.facebook.com/365publish"></a></li>
+                            <li><a target="_blank" class="uk-icon-button uk-icon-linkedin" href="https://www.linkedin.com/company/365publish-com-as"></a></li>
+                            <li><a target="_blank" class="uk-icon-button uk-icon-twitter" href="https://twitter.com/365publish"></a></li>
+                        </ul>
+                    </div>
+                    <div class="uk-width-1-3">
+                        <div class="tm-footer-title">{{ 'footer.manager.name'|trans }}</div>
+                        <ul class="uk-list tm-footer-adds">
+                            <li><i class="uk-icon-map-marker"></i>{{ 'footer.manager.address'|trans }}</li>
+                            {#<li><a class="cloak-email" href="mailto:{{ 'footer.manager.email'|trans|cloak_email }}"><i class="uk-icon-envelope"></i>{{ 'footer.manager.email'|trans|cloak_email }}</a></li>#}
+                            <li><i class="uk-icon-phone"></i>{{ 'footer.manager.phone'|trans }}</li>
+                        </ul>
+                    </div>
+                    <div class="uk-width-1-3">
+                        <div class="uk-float-right">
+                            <div class="tm-footer-title">{{ 'footer.support.name'|trans }}</div>
+                            <ul class="uk-list tm-footer-adds">
+                                <li><i class="uk-icon-map-marker"></i>{{ 'footer.support.address'|trans }}</li>
+                                {#<li><a class="cloak-email" href="mailto:{{ 'footer.support.email'|trans|cloak_email }}"><i class="uk-icon-envelope"></i>{{ 'footer.support.email'|trans|cloak_email }}</a></li>#}
+                                <li><i class="uk-icon-phone"></i>{{ 'footer.support.phone'|trans }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tm-footer-copyright">{{ 'footer.copyright'|trans }}</div>
+            </div>
+        </footer>
+    {% endblock footer %}
+
+
+    {% block javascripts %}
+        <script id="cloack_decoder">
+            {#
+            $.each($('.cloak-email'), function () {
+                var reg = /#\*[0-9;&#]+\*#/,
+                    html = $(this).html().replace(/&amp;/g, '&'),
+                    href = $(this).attr('href').replace(/&amp;/g, '&'),
+                    salt = '1',
+                    email_decode = function (str, reg) {
+                        salt = salt + salt;
+                        if(str.match(reg)){
+                            var match = str.match(reg)[0],
+                                    resultString = match.replace(/#\*|\*#/g, ''),
+                                    arr = resultString.split(';'),
+                                    email = '';
+                            salt = salt * 7 + '7';
+                            $.each(arr, function (key, val) {
+                                email += $.trim(String.fromCharCode(parseInt(val.replace(/&#/, '')) - salt - (5 * key)));
+                            });
+                            salt = '1';
+                            return str.replace(match, email);
+                        }
+                    };
+                $(this).html(email_decode(html, reg));
+                if(href) {
+                    $(this).attr('href', email_decode(href, reg));
+                }
+            });
+            $('#cloack_decoder').remove();
+            //DON'T REMOVE THIS SCRIPT. For security this script was minimized below. DON'T REMOVE THIS SCRIPT. This comment need to update script.
+            #}
+            function cloakDecode(){$.each($(".cloak-email"),function(){var a=/#\*[0-9;&#]+\*#/,b=$(this).html().replace(/&amp;/g,"&"),c=$(this).attr("href").replace(/&amp;/g,"&"),d="1",e=function(a,b){if(d+=d,a.match(b)){var c=a.match(b)[0],e=c.replace(/#\*|\*#/g,""),f=e.split(";"),g="";return d=7*d+"7",$.each(f,function(a,b){g+=$.trim(String.fromCharCode(parseInt(b.replace(/&#/,""))-d-5*a))}),d="1",a.replace(c,g)}};$(this).html(e(b,a)),c&&$(this).attr("href",e(c,a))}),$("#cloack_decoder").remove()}
+            cloakDecode();
+
+        </script>
+    {% endblock javascripts %}
+
+    {% block bottom_script %}{% endblock bottom_script %}
+
+    </body>
+</html>

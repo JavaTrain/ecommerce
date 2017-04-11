@@ -1,0 +1,45 @@
+//
+// Component: Sticky
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@sticky-z-index:                                @global-z-index - 20;
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-sticky-misc() {
+	[data-uk-sticky].uk-active {
+		margin: 0!important;
+		padding: @global-margin 0;
+		background-color: @global-background;
+		z-index: 1021;
+		max-width: calc(100% ~"-" 50px);
+
+		&:before, 
+		&:after {
+			content: '';
+			width: 99999px;
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: -40000px;
+			z-index: -1;
+		}
+		&:before {
+			background-color: @global-background;
+		}
+		&:after {
+			.box-shadow(@color: rgba(0, 0, 0, .3); @v-shadow: 2px; @blur: 5px; @spread: 2px; @inset: ~'';)
+		}
+		[class*='uk-align-'] {
+			margin-bottom: 0;
+		}
+	}
+}

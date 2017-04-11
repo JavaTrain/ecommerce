@@ -1,0 +1,42 @@
+//
+// Component: Tooltip
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@tooltip-z-index:                               @global-z-index + 30;
+
+@tooltip-font-size:                             round((@global-font-size * 0.75)); // 11px / 14px
+@tooltip-line-height:                           round((@tooltip-font-size * 1.46)); // 18px / 20px
+
+
+@tooltip-max-width:                             200px;
+@tooltip-padding-vertical:                      15px;
+@tooltip-padding-horizontal:                    15px;
+@tooltip-background:                            #FFF;
+@tooltip-triangle-size:                         7px;
+
+@tooltip-color:                                 rgba(0,0,0,1);
+
+@tooltip-offset-horizontal:                     15px;
+
+
+
+// Component
+// ========================================================================
+
+.hook-tooltip() {
+	border-radius: @global-border-radius;
+	.box-shadow(@color: rgba(0, 0, 0, .4); @blur: 8px; @spread: 2px; @inset: ~'';);
+	font-weight: 400;
+	text-align: left;
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-tooltip-misc() {}

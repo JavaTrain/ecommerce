@@ -1,0 +1,90 @@
+//
+// Component: Modal
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@modal-z-index:                                 @global-z-index + 30;
+
+@modal-background:                              rgba(31, 39, 50, .5);
+
+@modal-dialog-width:                            500px;
+
+@modal-dialog-padding:							30px;
+@modal-dialog-background:                       @global-background;
+
+@modal-header-margin-bottom:                    @global-margin;
+
+@modal-footer-margin-top:                       @global-margin;
+
+@modal-caption-color:                           @global-contrast-color;
+
+
+// Component
+// ========================================================================
+
+.hook-modal() {}
+
+
+// Sub-object: `uk-modal-dialog`
+// ========================================================================
+
+.hook-modal-dialog() {
+	border-radius: @global-border-radius;
+}
+
+
+// Modifier: `uk-modal-dialog-lightbox`
+// ========================================================================
+
+.hook-modal-dialog-lightbox() {}
+
+
+// Sub-object: `uk-modal-header`
+// ========================================================================
+
+.hook-modal-header() {}
+
+
+// Sub-object: `uk-modal-footer`
+// ========================================================================
+
+.hook-modal-footer() {}
+
+
+// Sub-object: `uk-modal-caption`
+// ========================================================================
+
+.hook-modal-caption() {}
+
+
+// Sub-object: `uk-modal-spinner`
+// ========================================================================
+
+.hook-modal-spinner() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-modal-misc() {
+	.uk-modal-dialog > .uk-close:first-child {
+		margin: -@modal-dialog-padding/2 -@modal-dialog-padding/2 0 0;
+	}
+}
+
+// Fancybox
+// ========================================================================
+div.fancybox-skin{
+	background: @modal-dialog-background;
+	div.fancybox-outer{
+		div.fancybox-inner{
+			.tm-upload-window{
+				margin: 0 6px 6px;
+			}
+		}
+	}
+}

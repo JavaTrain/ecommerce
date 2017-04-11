@@ -1,0 +1,95 @@
+//
+// Component: Tab
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@tab-border:                                    @global-border;
+@tab-border-width:                              0;
+@tab-padding-horizontal:                        30px;
+@tab-padding-vertical:                          5px;
+@tab-margin-horizontal:							20px;
+@tab-color:                                     #000;
+@tab-background:								#DFDFDF;
+@tab-hover-color:                               #FFF;
+
+@tab-hover-background:							@global-theme-primary;
+
+
+@tab-active-background:                         @global-theme-primary;
+@tab-active-color:                              @tab-color;
+@tab-disabled-color:                            @global-muted-color;
+
+
+// Component
+// ========================================================================
+
+//
+// Items
+//
+
+.hook-tab() {
+	border-radius: @global-border-radius @global-border-radius 0 0;
+}
+
+// Hover
+.hook-tab-hover() {}
+
+// Active
+.hook-tab-active() {
+	font-weight: 600;
+}
+
+// Disabled
+.hook-tab-disabled() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-tab-misc() {
+	.uk-tab {
+		background-color: @tab-background;
+
+		& > li:first-child {
+			margin-left: @tab-margin-horizontal;
+		}
+	}
+}
+.tm-tab-nav{
+	background: none;
+	border-bottom: 1px solid @global-border;
+	&:after,
+	&:before{
+		display: none;
+	}
+	li{
+		position: relative;
+		margin-bottom: -1px;
+		&:first-child{
+			margin-left: 0;
+		}
+		&:nth-child(n+2) > a{
+			margin-left: 5px;
+		}
+		a{
+			border: 1px solid transparent;
+			&:hover,
+			&:focus{
+				border-color: @global-border;
+				background: #f6f7f9;
+				color: inherit;
+			}
+		}
+		&.uk-active{
+			a{
+				border-color: @global-border;
+				background: #fff;
+				border-bottom-color: transparent;
+			}
+		}
+	}
+}

@@ -1,0 +1,450 @@
+//
+// Component: Button
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@button-height:                                 @global-height;
+@button-mini-height:                            @global-height-mini;
+@button-small-height:                           @global-height-small;
+@button-large-height:                           @global-height-large;
+
+@button-line-height:                            @global-height; // +1px fix
+@button-mini-line-height:                       @global-height-mini;
+@button-small-line-height:                      @global-height-small;
+@button-large-line-height:                      @global-height-large;
+
+@button-font-weight:                            600;
+
+@button-mini-font-size:                         round((@global-font-size * 0.7)); // 11px / 12px
+@button-small-font-size:                        round((@global-font-size * 0.85)); // 12px / 14px
+@button-large-font-size:                        round((@global-font-size * 1.29)); // 18px
+
+@button-padding-horizontal:                     round((@global-height * 0.6)); // 24px
+@button-mini-padding-horizontal:                round((@global-height-mini * 0.5)); // 10px
+@button-small-padding-horizontal:               round((@global-height-small * 0.4)); // 10px
+@button-large-padding-horizontal:               round((@global-height-large * 0.6)); // 40px
+@button-dropdown-horizontal-padding:            10px;
+
+@button-background:                             #EBEBEB;
+@button-hover-background:                       #FFFFFF;
+@button-active-background:                      #FFFFFF;
+@button-color:                                  #646070;
+@button-hover-color:                            #646070;
+@button-active-color:                           #646070;
+@button-shadow:                                 #EBEBEB;
+@button-hover-shadow:                           #a6a7a6;
+@button-active-shadow:                          #a6a7a6;
+
+@button-primary-background:                     @global-primary-background;
+@button-primary-hover-background:               #3799DB;
+@button-primary-active-background:              #318BC6;
+@button-primary-color:                          @global-contrast-color;
+@button-primary-hover-color:                    @global-contrast-color;
+@button-primary-active-color:                   @global-contrast-color;
+@button-primary-shadow:                         #328bc7;
+@button-primary-hover-shadow:                   #328bc7;
+@button-primary-active-shadow:                  #328bc7;
+
+
+@button-success-background:                     @global-success-background;
+@button-success-hover-background:               #8EC73B;
+@button-success-active-background:              #9BCC36;
+@button-success-color:                          @global-contrast-color;
+@button-success-hover-color:                    @global-contrast-color;
+@button-success-active-color:                   @global-contrast-color;
+@button-success-shadow:                         #82bb42;
+@button-success-hover-shadow:                   #88B63B;
+@button-success-active-shadow:                  #88B63B;
+
+@button-danger-background:                      @global-danger-background;
+@button-danger-hover-background:                #E4354f;
+@button-danger-active-background:               #ED7058;
+@button-danger-color:                           @global-contrast-color;
+@button-danger-hover-color:                     @global-contrast-color;
+@button-danger-active-color:                    @global-contrast-color;
+@button-danger-shadow:                          #DB7A67;
+@button-danger-hover-shadow:                    #ED7058;
+@button-danger-active-shadow:                   #ED7058;
+
+@button-warning-background:                     @global-warning-background;
+@button-warning-hover-background:               #E4BF48;
+@button-warning-active-background:              #E4BF48;
+@button-warning-color:                          @global-contrast-color;
+@button-warning-hover-color:                    @global-contrast-color;
+@button-warning-active-color:                   @global-contrast-color;
+@button-warning-shadow:                         #D7AF35;
+@button-warning-hover-shadow:                   #D7AF35;
+@button-warning-active-shadow:                  #D7AF35;
+
+@button-ghost-background:                       @global-background;
+@button-ghost-hover-background:                 @global-background;
+@button-ghost-active-background:                @button-background;
+@button-ghost-color:                            @global-color;
+@button-ghost-hover-color:                      @global-color;
+@button-ghost-active-color:                     @global-color;
+
+@button-delete-background:                      #FDC2B4;
+@button-delete-hover-background:                darken(@button-delete-background, 5%);
+@button-delete-active-background:               darken(@button-delete-background, 10%);
+@button-delete-color:                           #F46582;
+@button-delete-hover-color:                     darken(@button-delete-color, 5%);
+@button-delete-active-color:                    darken(@button-delete-color, 10%);
+
+@button-disabled-background:                    #EBEBEB;
+@button-disabled-color:                         #C2C1C6;
+@button-disabled-shadow:                        #D9D9D9;
+
+
+@button-link-color:                             @global-link-color;
+@button-link-hover-color:                       @global-link-hover-color;
+@button-link-disabled-color:                    @global-muted-color;
+
+@button-chevron-color:                          #9F9EA3;
+
+
+// Component
+// ========================================================================
+
+.hook-button() {
+    border-radius: @global-border-radius;
+    font-weight: @button-font-weight;
+    .box-shadow(@color: @button-hover-shadow, @spread: 1px);
+    &.hover{
+       background: @button-hover-background; 
+    }
+    &.active{
+       .box-shadow(@color: @button-active-shadow, @spread: 2px); 
+    }
+}
+
+.hook-button-hover() {
+    .box-shadow(@color: @button-hover-shadow, @spread: 1px);
+}
+
+.hook-button-active() {
+    .box-shadow(@color: @button-active-shadow, @spread: 2px);
+
+    &[data-uk-form-select] {
+        .box-shadow(@color: @button-hover-shadow, @spread: 1px);
+    }
+}
+
+
+// Color modifiers
+// ========================================================================
+
+//
+// Modifier: `uk-button-primary`
+//
+
+.hook-button-primary() {
+    .box-shadow(@color: @button-primary-shadow, @spread: 1px);
+}
+
+.hook-button-primary-hover() {
+    .box-shadow(@color: @button-primary-hover-shadow, @spread: 1px);
+}
+.hook-button-primary-active() {
+    .box-shadow(@color: @button-primary-active-shadow, @spread: 2px);
+}
+
+//
+// Modifier: `uk-button-success`
+//
+
+.hook-button-success() {
+    .box-shadow(@color: @button-success-shadow, @spread: 1px);
+}
+
+.hook-button-success-hover() {
+    .box-shadow(@color: @button-success-hover-shadow, @spread: 1px);
+}
+.hook-button-success-active() {
+    .box-shadow(@color: @button-success-active-shadow, @spread: 2px);
+}
+
+//
+// Modifier: `uk-button-danger`
+//
+
+.hook-button-danger() {
+    .box-shadow(@color: @button-danger-shadow, @spread: 1px);
+}
+
+.hook-button-danger-hover() {
+    .box-shadow(@color: @button-danger-hover-shadow, @spread: 1px);
+}
+.hook-button-danger-active() {
+    .box-shadow(@color: @button-danger-active-shadow, @spread: 1px);
+}
+
+
+// Disabled state
+// ========================================================================
+
+.hook-button-disable() {
+    .box-shadow(@color: @button-disabled-shadow, @spread: 1px);
+}
+
+
+.tm-button-disabled,
+.tm-button-disabled:focus,
+.tm-button-disabled:hover,
+.tm-button-disabled:active {
+    background-color: @button-disabled-background;
+    color: @button-disabled-color;
+    .hook-button-disable;
+}
+
+// Modifier: `uk-button-link`
+// ========================================================================
+
+.hook-button-link() {
+    box-shadow: none;
+}
+
+
+// Size modifiers
+// ========================================================================
+
+.hook-button-large() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-button-misc() {
+    //
+    // Modifier: `tm-button-warning`
+    //
+    .tm-button-warning {
+        background-color: @button-warning-background;
+        .box-shadow(@color: @button-warning-shadow, @spread: 1px);
+        color: @button-warning-color;
+    }
+    .tm-button-warning:hover,
+    .tm-button-warning:focus {
+        background-color: @button-warning-hover-background;
+        .box-shadow(@color: @button-warning-hover-shadow, @spread: 1px);
+        color: @button-warning-hover-color;
+    }
+    .tm-button-warning:active,
+    .tm-button-warning.uk-active {
+        background-color: @button-warning-active-background;
+        .box-shadow(@color: @button-warning-active-shadow, @spread: 2px);
+        color: @button-warning-active-color;
+    }
+
+    //
+    // Modifier: `tm-button-delete`
+    //
+    .tm-button-delete {
+        background-color: @button-delete-background;
+        color: @button-delete-color;
+        .box-shadow(@color: rgba(0, 0, 0, 0));
+    }
+    .tm-button-delete:hover,
+    .tm-button-delete:focus {
+        background-color: @button-delete-hover-background;
+        color: @button-delete-hover-color;
+        .box-shadow(@color: rgba(0, 0, 0, 0));
+    }
+    .tm-button-delete:active,
+    .tm-button-delete.uk-active {
+        background-color: @button-delete-active-background;
+        color: @button-delete-active-color;
+        .box-shadow(@color: rgba(0, 0, 0, 0));
+    }
+
+    //
+    // Modifier: `tm-button-ghost`
+    //
+    .tm-button-ghost {
+        height: @button-height - 2*@global-border-width;
+        background-color: @button-ghost-background;
+        border: @global-border-width dashed @global-border;
+        font-weight: 300;
+        line-height: @button-line-height - 2*@global-border-width;
+        color: @button-ghost-color;
+        .box-shadow(@color: rgba(0, 0, 0, 0));
+
+        &.uk-button-mini {
+            height: @button-mini-height - 2*@global-border-width;
+            line-height: @button-mini-line-height - 2*@global-border-width;
+        }
+        &.uk-button-small {
+            height: @button-small-height - 2*@global-border-width;
+            line-height: @button-small-line-height - 2*@global-border-width;
+        }
+        &.uk-button-large {
+            height: @button-large-height - 2*@global-border-width;
+            line-height: @button-large-line-height - 2*@global-border-width;
+        }
+    }
+    .tm-button-ghost:hover,
+    .tm-button-ghost:focus {
+        background-color: @button-ghost-hover-background;
+        border: @global-border-width solid @global-border;
+        color: @button-ghost-hover-color;
+        .box-shadow(@color: rgba(0, 0, 0, 0));
+    }
+    .tm-button-ghost:active,
+    .tm-button-ghost.uk-active {
+        background-color: @button-ghost-active-background;
+        border: @global-border-width solid @global-border;
+        color: @button-ghost-active-color;
+        .box-shadow(@color: rgba(0, 0, 0, 0));
+    }
+
+    // 
+    // Modifier: `tm-module-button`
+    //
+    .tm-module-button {
+        box-shadow: none;
+        text-decoration: none !important;
+        font-weight: 400;
+    }
+
+    //
+    // Full Width Button Dropdown
+    //
+    .uk-button[class*='uk-width'],
+    .uk-button[class*="uk-form-width-"],
+    [class*="tm-inside-width-1"] .uk-button {
+        text-align: left;
+
+        [class*="uk-icon-angle-"] {
+            float: right;
+        }
+    }
+
+    // 
+    // Small Button Inside Form
+    // 
+    .uk-form-horizontal [class*="uk-width-"] {
+        & > .uk-button-small, 
+        & > .uk-form-file > .uk-button-small, 
+        & > .tm-form-file-hint {
+            // margin-top: 6px; // DEviation form add email
+        }
+    }
+
+    // 
+    // Button input upload file
+    //
+    ::-webkit-file-upload-button {
+        cursor: pointer;
+    }
+
+    //
+    // Button Dropdown
+    // Button Select
+    //
+    .tm-button-dropdown(@paddin-right: 2em; @padding-left: @button-dropdown-horizontal-padding; @background: rgba(255, 255, 255, 1); @font-weight: 300;) {
+        overflow: hidden;
+        padding: 0 @paddin-right 0 @padding-left;
+        background-color: @background;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-weight: @font-weight;
+    }
+    .tm-button-dropdown-chevron(@background: rgba(255, 255, 255, 1);) {
+        position: absolute;
+        top: @global-border-radius;
+        right: @global-border-width;
+        bottom: @global-border-radius;
+        padding-right: @button-dropdown-horizontal-padding;
+        // margin-left: .4em;
+        background-color: @background;
+        line-height: @button-line-height - (2 * @global-border-radius);
+        color: @button-chevron-color;
+    }
+    .uk-button-dropdown > .uk-button,
+    .uk-form-select.uk-button {
+        .tm-button-dropdown();
+
+        [class*="uk-icon-angle-"] {
+            .tm-button-dropdown-chevron();
+        }
+        &.uk-button-mini .uk-icon-chevron-down {
+            line-height: @button-mini-line-height - (2 * @global-border-radius);
+        }
+        &.uk-button-small .uk-icon-chevron-down {
+            line-height: @button-small-line-height - (2 * @global-border-radius);
+        }
+        &.uk-button-large .uk-icon-chevron-down {
+            line-height: @button-large-line-height - (2 * @global-border-radius);
+        }
+    }
+    .uk-button-dropdown > .uk-button:disabled {
+        background-color: @button-disabled-background;
+
+        [class*="uk-icon-angle-"] {
+            background-color: rgba(0, 0, 0, 0);
+        }
+    }
+    .uk-button-dropdown.uk-open > .uk-button,
+    .uk-button.uk-form-select.uk-open[data-uk-form-select] {
+        .box-shadow(@color: rgba(0, 0, 0, .5), @spread: 1px);
+    }
+    
+    /* Sub-object `uk-button-group`
+     ========================================================================== */
+    .uk-button-group > .uk-button {
+        background-color: @button-hover-background;
+        font-weight: 300;
+    }
+    /*
+     * Reset border-radius
+     */
+
+    .uk-button-group > .uk-button:not(:first-child):not(:last-child),
+    .uk-button-group > div:not(:first-child):not(:last-child) .uk-button {
+        border-left-color: rgba(0,0,0,0.1);
+        border-right-color: rgba(0,0,0,0.1);
+        border-radius: 0;
+    }
+
+    .uk-button-group > .uk-button:first-child,
+    .uk-button-group > div:first-child .uk-button {
+        border-right-color: rgba(0,0,0,0.1);
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .uk-button-group > .uk-button:last-child,
+    .uk-button-group > div:last-child .uk-button {
+        border-left-color: rgba(0,0,0,0.1);
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    /*
+     * Active state
+     */
+    .uk-button-group > .uk-button:active, 
+    .uk-button-group > .uk-button.uk-active {
+        background-color: #E9F0F3;
+        .box-shadow(@color: @button-hover-shadow, @spread: 1px);
+    }
+
+    /*
+     * Collapse border
+     */
+
+    .uk-button-group > .uk-button:nth-child(n+2),
+    .uk-button-group > div:nth-child(n+2) .uk-button { margin-left: -1px; }
+
+    /*
+     * Create position context to superimpose the successor elements border
+     * Known issue: If you use an `a` element as button and an icon inside,
+     * the active state will not work if you click the icon inside the button
+     * Workaround: Just use a `button` or `input` element as button
+     */
+
+    .uk-button-group .uk-button:hover,
+    .uk-button-group .uk-button:active { position: relative; }
+}

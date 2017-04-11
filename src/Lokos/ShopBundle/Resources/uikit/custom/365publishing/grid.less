@@ -1,0 +1,40 @@
+//
+// Component: Grid
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@grid-gutter-horizontal:                        @global-grid-gutter;
+@grid-gutter-vertical:                          @global-grid-gutter;
+
+@grid-gutter-large-horizontal:                  @global-grid-gutter-large;
+@grid-gutter-large-vertical:                    @global-grid-gutter-large;
+
+@grid-divider-border:                           @global-border;
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-grid-misc() {
+
+	// Vertical Gutter If Accordion Applied To "uk-grid" 
+	.uk-grid + [data-wrapper] > .uk-grid, 
+	[data-wrapper] + .uk-grid,
+	[data-accordion-content] > .uk-grid:first-child {
+		margin-top: @grid-gutter-vertical;
+	}
+
+	/* Large screen and bigger */
+	@media (min-width: @breakpoint-xlarge) {
+	    .uk-grid + [data-wrapper] > .uk-grid, 
+		[data-wrapper] + .uk-grid, 
+		[data-accordion-content] > .uk-grid:first-child {
+			margin-top: @grid-gutter-large-vertical;
+		}
+
+	}
+}

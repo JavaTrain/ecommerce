@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="15.084px" height="15px" viewBox="8 7 15.084 15" enable-background="new 8 7 15.084 15" xml:space="preserve">
+<symbol  id="SummaryReport" viewBox="-15 -15 30 30">
+	<polygon fill="none" points="15,-15 -15,-15 -15,15 15,15 	"/>
+	<path fill="#FFFFFF" d="M7.771,3L1.084,0.926l4.48-5.377c1.54,1.284,2.52,3.215,2.52,5.377C8.084,1.648,7.974,2.345,7.771,3z"/>
+	<g>
+		<path fill="#FFFFFF" d="M0,7c2.306,0,4.352-1.289,5.358-3.292l-5.654-1.753l-1.431-0.444l0.959-1.151l3.786-4.544
+			C2.106-4.715,1.064-5,0-5c-3.309,0-6,2.691-6,6S-3.309,7,0,7 M0,8c-3.866,0-7-3.134-7-7s3.134-7,7-7
+			c1.705,0,3.266,0.61,4.479,1.623L0,1l6.688,2.074C5.803,5.927,3.144,8,0,8L0,8z"/>
+	</g>
+	<g>
+		<path fill="#FFFFFF" d="M4.48-4.377c0,0-8.75-4.79-11.48,5.377c0-5.167,2.875-8,7-8c1.704,0,3.266,0.61,4.48,1.623
+			C4.48-5.377,4.48-4.377,4.48-4.377z"/>
+	</g>
+</symbol>
+<use xlink:href="#SummaryReport"  width="30" height="30" id="XMLID_1_" x="-15" y="-15" transform="matrix(1 0 0 -1 15 15)" overflow="visible"/>
+</svg>

@@ -1,0 +1,67 @@
+//
+// Component: Alert
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@alert-margin-vertical:                         @global-margin * 2;
+@alert-padding:                                 @global-margin-large @global-margin-large * 3;
+
+
+// Component
+// ========================================================================
+
+.hook-alert() {
+	border: @global-border-width solid @global-border;
+	border-radius: @global-border-radius;
+}
+
+
+// Modifier: `uk-alert-success`
+// ========================================================================
+
+.hook-alert-success() {
+	border-color: @global-success-background;
+}
+
+
+// Modifier: `uk-alert-warning`
+// ========================================================================
+
+.hook-alert-warning() {
+	border-color: @global-warning-background;
+}
+
+
+// Modifier: `uk-alert-danger`
+// ========================================================================
+
+.hook-alert-danger() {
+	border-color: @global-danger-background;
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-alert-misc() {
+	.tm-alert-icon {
+		position: absolute;
+		top: @global-margin-large;
+		left: round(@global-margin-large*1.5);
+
+		&:before {
+			display: block;
+			margin-left: -50%;
+		}
+
+	}
+	.tm-alert-edit {
+		position: absolute;
+		top: @global-border-radius * 2;
+		right: @global-border-radius * 2;
+	}
+}

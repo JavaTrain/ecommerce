@@ -1,0 +1,4 @@
+lokos_shop:
+    resource: "@LokosShopBundle/Resources/config/routing.yml"
+    prefix:   /
+

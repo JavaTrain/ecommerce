@@ -1,0 +1,99 @@
+//
+// Component: Notify
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@notify-position:                               6px;
+@notify-z-index:                                @global-z-index + 40;
+@notify-width:                                  600px;
+
+@notify-message-font-size:                      @global-font-size; // 14px
+@notify-message-line-height:                    round((@notify-message-font-size * 1.36)); // 22px / 24px
+@notify-message-padding-left: 					75px;
+@notify-message-padding-right: 					75px;
+@notify-message-icon-size:	 					36px;
+@notify-message-icon-vertical:	 				20px;
+@notify-message-icon-horizontal:				20px;
+@notify-message-title-font-size:                round((@global-font-size * 1.14)); // 14px / 16px
+@notify-message-body-color:						@global-color;
+
+
+// Component
+// ========================================================================
+
+.hook-notify() {
+	max-width: 100%;
+}
+
+.hook-notify-message() {
+	padding-left: @notify-message-padding-left;
+	padding-right: @notify-message-padding-right;
+	border: @global-border-width solid @global-border;
+	border-radius: @global-border-radius;
+}
+
+.hook-notify-message-primary() {}
+
+.hook-notify-message-success() {
+	border-color: lighten(@notify-message-success-color, 30%);
+}
+
+.hook-notify-message-warning() {
+	border-color: lighten(@notify-message-warning-color, 30%);
+}
+
+.hook-notify-message-danger() {
+	border-color: lighten(@notify-message-danger-color, 30%);
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-notify-misc() {
+
+	// Close Button
+	.uk-notify-message > .uk-close {
+		position: absolute;
+		top: @notify-message-icon-vertical;
+		right: @notify-message-icon-horizontal;
+		visibility: visible;
+	}
+	
+	// Hide Notify
+	.uk-notify-message-hide {
+		display: none;
+	}
+
+	// Notify Status Icons
+	.tm-icon-notify-type {
+		position: absolute;
+		top: @notify-message-icon-vertical;
+		left: @notify-message-icon-horizontal;
+		font-size: @notify-message-icon-size;
+	}
+	.uk-notify-message-success .tm-icon-notify-type:before {
+		content: '\f00c';
+	}
+	.uk-notify-message-warning .tm-icon-notify-type:before {
+		content: '\f071';
+	}
+	.uk-notify-message-danger .tm-icon-notify-type:before {
+		content: '\f06a';
+	}
+
+	// Notify Title
+	.uk-notify-message-title {
+		font-size: @notify-message-title-font-size;
+		font-weight: 600;
+	}
+
+	// Notify Body
+	.uk-notify-message-body {
+		color: @notify-message-body-color;
+	}
+}

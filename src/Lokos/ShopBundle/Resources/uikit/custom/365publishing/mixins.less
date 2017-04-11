@@ -1,0 +1,144 @@
+// Mixins
+//
+// 
+//
+//
+//
+
+
+
+// Box shadow
+// Shadow color:			'color';
+// Horizontal position:     0;
+// Vertical position:       0;
+// Blur:                    0;
+// Spread:					0;
+// Shadow inset:			inset;
+//
+.box-shadow(@color: rgba(0, 0, 0, .5); @h-shadow: 0; @v-shadow: 0; @blur: 0; @spread: 0; @inset: inset;) {
+	box-shadow: @color @h-shadow @v-shadow @blur @spread @inset;
+}
+
+
+// Transform
+// Duration:				'seconds';
+// Ease:					ease-in-out
+// 
+.transition(@prop: all; @duration: 0.2s; @ease: ease-in-out) {
+	-webkit-transition: @prop @duration @ease;
+	-moz-transition: @prop @duration @ease;
+	-o-transition: @prop @duration @ease;
+	transition: @prop @duration @ease;
+}
+
+// Fontawesome icon mixin
+// @display:				inline-block;
+// @line-height:			1;
+// 
+.font-icon(@display: inline-block; @font-family: 'FontAwesome'; @line-height: 1;) {
+	display: @display;
+	font-family: @font-family;
+	font-weight: normal;
+	font-style: normal;
+	line-height: @line-height;
+	 -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// Full width/without background
+// @color:					rgba(0, 0, 0, 0);
+// 
+.tm-full-width-background(@color: rgba(0, 0, 0, 0);) {
+	margin-left: -9999px;
+	margin-right: -9999px;
+	padding-left: 9999px;
+	padding-right: 9999px;
+	background-color: @color;
+}
+
+// Validator Message Mixin
+// @display:				none;
+// @opacity:				0;
+// @top:					-21px;
+// @size-variator:			12px;
+// // width:				x10
+// // margin-left:			x1/4
+// // padding-vertical:		x3/4
+// // padding-horizontal:	x1
+// 
+// @background:				@tm-validator-background;
+// @font-size:				@text-small-font-size;
+// @font-color:				#FFF;
+// @arrow-size:				13px;
+
+.tm-form-validator-mixin(
+	@display: none;
+	@opacity: 0;
+	@size-variator: 12px;
+	@top: -21px;
+	@background: @tm-validator-background; 
+	@font-size: @text-small-font-size; 
+	@font-color: #FFF;
+	@arrow-size: @global-validator-arow-size;
+	) {
+	width: @size-variator * 10;
+	display: @display;
+	position: absolute;
+	top: @top;
+	left: 100%;
+	opacity: @opacity;
+	margin-left: round(@size-variator / 4);
+	padding: round(@size-variator * 0.7) round(@size-variator);
+	background-color: @background;
+	border-radius: 4px @global-border-radius @global-border-radius 4px;
+	font-size: @font-size;
+	line-height: round(@font-size * 1.25);
+	color: @font-color;
+	.transition(@prop: opacity; @duration: 0.2s;);
+
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 2px;
+		right: 100%;
+		border-width: @arrow-size @arrow-size @arrow-size 0;
+		border-style: solid;
+		border-color: transparent @background transparent transparent;
+	}
+	.error &, 
+	.tm-error & {
+		display: block;
+	}
+	@media (min-width: @breakpoint-xxlarge) {
+		.tm-form-validator-mixin(@arguments) {
+			left: 1278px !important;
+		}
+	}
+}
+
+// No text selection
+.no-user-select() {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.gradient-white(@from: rgba(255,255,255,0.2), @to: rgba(255,255,255,1)) {
+	background-color: @from;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(@from), to(@to));
+	background-image: -webkit-linear-gradient(top, @from, @to);
+	background-image:    -moz-linear-gradient(top, @from, @to);
+	background-image:      -o-linear-gradient(top, @from, @to);
+	background-image:         linear-gradient(to bottom, @from, @to);
+}
+.translate(@x, @y) {
+	-webkit-transform: translate(@x, @y);
+	-moz-transform: translate(@x, @y);
+	-ms-transform: translate(@x, @y);
+	-o-transform: translate(@x, @y);
+}
+
