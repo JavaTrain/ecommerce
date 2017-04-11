@@ -3,7 +3,6 @@
 namespace Lokos\ShopBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use JMS\Serializer\Annotation\Exclude;
 
 /**
  * AttributeValue
@@ -30,7 +29,6 @@ class AttributeValue
     private $value;
 
     /**
-     * @Exclude
      * @var Attribute
      *
      * @ORM\ManyToOne(targetEntity="Attribute", inversedBy="attributeValues")

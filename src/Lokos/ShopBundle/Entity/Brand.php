@@ -4,7 +4,6 @@ namespace Lokos\ShopBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use JMS\Serializer\Annotation\Exclude;
 
 /**
  * Brand
@@ -31,14 +30,12 @@ class Brand
     private $name;
 
     /**
-     * @Exclude
      * One Product has Many Features.
      * @ORM\OneToMany(targetEntity="Product", mappedBy="brand")
      */
     private $products;
 
     /**
-     * @Exclude
      * @var \Doctrine\Common\Collections\Collection
      *
      * @ORM\ManyToMany(targetEntity="Category", mappedBy="brands")

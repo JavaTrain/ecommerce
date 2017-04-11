@@ -54,7 +54,31 @@
     {% block wrapper %}
         <div id="wrapper" class="uk-margin-large-bottom">
             {% block nav %}
+                {#{{ render(controller('LokosShopBundle:Category:index')) }}#}
 
+                <nav class="uk-navbar">
+
+                    <ul class="uk-navbar-nav">
+                        <li class="uk-active"><a href="">Active</a></li>
+                        <li><a href="">Item</a></li>
+                        <li class="uk-parent" data-uk-dropdown="" aria-haspopup="true" aria-expanded="false">
+                            <a href="">Parent <i class="uk-icon-caret-down"></i></a>
+
+                            <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-bottom" aria-hidden="true" tabindex="" style="top: 40px; left: 0px;">
+                                <ul class="uk-nav uk-nav-navbar">
+                                    <li></li>
+                                    <li><a href="#">Item</a></li>
+                                    <li><a href="#">Another item</a></li>
+                                    <li class="uk-nav-header">Header</li>
+                                    <li><a href="#">Item</a></li>
+                                    <li><a href="#">Another item</a></li>
+                                    <li class="uk-nav-divider"></li>
+                                    <li><a href="#">Separated item</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
             {% endblock nav %}
             <div id="primary-content">
                 <div class="uk-container uk-container-center">
@@ -69,9 +93,7 @@
                         {% endfor %}
                     {% endblock system_messages %}
 
-                    {% block content %}
-
-                    {% endblock content %}
+                    {% block content %}{% endblock content %}
                 </div>
             </div>
 
