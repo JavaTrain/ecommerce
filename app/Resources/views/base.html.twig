@@ -13,6 +13,8 @@
     {% block styles %}
         {% stylesheets
         '@LokosShopBundle/Resources/public/css/uikit.365publishing.min.css'
+        '@LokosShopBundle/Resources/public/css/font-awesome.css'
+        '@LokosShopBundle/Resources/public/css/menu.css'
         %}
         <link href="{{ asset_url }}" type="text/css" rel="stylesheet"/>
         {% endstylesheets %}
@@ -30,6 +32,7 @@
         '@LokosShopBundle/Resources/public/js/components/grid.min.js'
         '@LokosShopBundle/Resources/public/js/components/sticky.min.js'
         '@LokosShopBundle/Resources/public/js/components/accordion.min.js'
+        '@LokosShopBundle/Resources/public/js/function.js'
         %}
         <script src="{{ asset_url }}"></script>
         {% endjavascripts %}
@@ -54,31 +57,18 @@
     {% block wrapper %}
         <div id="wrapper" class="uk-margin-large-bottom">
             {% block nav %}
-                {#{{ render(controller('LokosShopBundle:Category:index')) }}#}
-
-                <nav class="uk-navbar">
-
-                    <ul class="uk-navbar-nav">
-                        <li class="uk-active"><a href="">Active</a></li>
-                        <li><a href="">Item</a></li>
-                        <li class="uk-parent" data-uk-dropdown="" aria-haspopup="true" aria-expanded="false">
-                            <a href="">Parent <i class="uk-icon-caret-down"></i></a>
-
-                            <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-bottom" aria-hidden="true" tabindex="" style="top: 40px; left: 0px;">
-                                <ul class="uk-nav uk-nav-navbar">
-                                    <li></li>
-                                    <li><a href="#">Item</a></li>
-                                    <li><a href="#">Another item</a></li>
-                                    <li class="uk-nav-header">Header</li>
-                                    <li><a href="#">Item</a></li>
-                                    <li><a href="#">Another item</a></li>
-                                    <li class="uk-nav-divider"></li>
-                                    <li><a href="#">Separated item</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
+                <div id="wrap">
+                    <header>
+                        <div class="inner relative">
+                            <a class="logo" href="http://www.freshdesignweb.com"><img src="images/logo.png" alt="fresh design web"></a>
+                            <a id="menu-toggle" class="button dark" href="#"><i class="icon-reorder"></i></a>
+                            <nav id="navigation">
+                                {{ render(controller('LokosShopBundle:Category:index')) }}
+                            </nav>
+                            <div class="clear"></div>
+                        </div>
+                    </header>
+                </div>
             {% endblock nav %}
             <div id="primary-content">
                 <div class="uk-container uk-container-center">

@@ -37,26 +37,34 @@ class CategoryController extends BaseController
         $options = array(
             'decorate'      => true,
             'rootOpen'      => function ($tree) {
-            },
-            'rootClose'     => '</ul></li>'."\n",
-            'childOpen'     => function ($tree) {
-                if (!empty($tree['__children'])) {
-                    $res = '<li><a href="#" class="dropdown-toggle" data-toggle="dropdown">'.$tree["name"].'<b class="caret"></b></a><ul class="dropdown-menu">'."\n";
-                } else {
-                    $res = '<li>'."\n";
+                if(count($tree) && ($tree[0]['lvl'] == 0)){
+                    return '<ul id="main-menu">';
+                }else{
+                    return '<ul class="sub-menu">';
                 }
-                return $res;
+            },
+            'rootClose'     => '</ul>'."\n",
+            'childOpen'     => function ($tree) {
+                //                var_dump($tree);die;
+                if(!empty($tree['__children'])){
+                    return '<li class="parent">';
+                }
+                return '<li>';
             },
             'childClose'    => '</li>'."\n",
             'nodeDecorator' => function ($node) use ($router) {
                 if (!empty($node['__children'])) {
-                    $res = ''."\n";
+                    $res = '<a href="'.$router->generate('lokos_shop_homepage', ['id' => $node['id']]).'">'.$node['name'].'</a>'."\n";
                 } else {
                     $res = '<a href="'.$router->generate('lokos_shop_homepage', ['id' => $node['id']]).'">'.$node['name'].'</a>'."\n";
                 }
                 return $res;
             }
         );
+
+
+
+
 
         $tree = $repo->childrenHierarchy(null,false, $options);
 
