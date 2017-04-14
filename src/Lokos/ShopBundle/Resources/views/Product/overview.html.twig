@@ -1,0 +1,78 @@
+{% trans_default_domain 'general' %}
+{% extends '::base.html.twig' %}
+
+{% block  content %}
+    <div class="uk-grid">
+        <div class="uk-width-1-6">
+                <div>
+                    <form>
+                        <div>
+                            <h4>Brand:</h4>
+                            {% for brand in itemCategory.brands %}
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" {% if brand.id in filterBrand %} checked {% endif %} type="checkbox" name="brand[]" value="{{ brand.id }}" onchange="this.form.submit();">
+                                        {{ brand.name }}
+                                    </label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div>
+                            <h4>Attributes:</h4>
+                            {% for attribute in itemCategory.attributes %}
+                                <div>
+                                    <h6>{{ attribute.name }}</h6>
+                                    {% for attrValue in attribute.attributeValues %}
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input"
+                                                        {% if filterAttribute[attribute.id] is defined %}{% if attrValue.id in filterAttribute[attribute.id] %} checked {% endif %}{% endif %}
+                                                       name="attribute[{{ attribute.id }}][]" value="{{ attrValue.id }}" onchange="this.form.submit();">
+                                                {{ attrValue.value }}
+                                            </label>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </form>
+                </div>
+        </div>
+        <div class="uk-width-5-6">
+            <div class="uk-grid uk-container-center">
+                {% for item in items %}
+                    <div class="uk-width-1-3">
+                        <div class="thumbnail">
+                            <a href="{{ path('lokos_shop_item_detail', {'catId': itemCategory.id, 'itemId': item.id}) }}"><img src="http://placehold.it/320x150" alt=""></a>
+                            <div class="caption">
+                                <h4 class="pull-right">${{ item.price }}</h4>
+                                <h4><a href="{{ path('lokos_shop_item_detail', {'catId': itemCategory.id, 'itemId': item.id}) }}">{{ item.name }}</a>
+                                </h4>
+                                <p>{{ item.description|raw }}</p>
+                            </div>
+                            {% for pr2attr in item.product2Attributes %}
+                                <h5>{{ pr2attr.attribute.name }}</h5>
+                                <h6>{{ pr2attr.attributeValue.value }}</h6>
+                            {% endfor %}
+                            <hr>
+                            <div>
+                                <a class="btn btn-primary add-to-cart" data-item-id="{{ item.id }}" href="#">Add to cart</a>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <h2>Nothing to show</h2>
+                {% endfor %}
+        </div>
+    </div>
+{% endblock  content %}

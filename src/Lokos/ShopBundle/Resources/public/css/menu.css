@@ -1,11 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 body {
-	background-color: #eee;
-	background-image: url(../images/patterns/light_toast.png);
-	color: #666;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 12px;
+	/*background-color: #eee;*/
+	/*background-image: url(../images/patterns/light_toast.png);*/
+	/*color: #666;*/
+	/*font-family: 'Open Sans', sans-serif;*/
+	/*font-size: 12px;*/
 	margin:0px;
 	padding:0px;
 }
@@ -24,11 +24,11 @@ ol, ul {
 	margin:0px;
 }
 #wrap {
-	margin: 0 auto;
+	margin-bottom: 30px;
 }
 
 .inner {
-	margin: 0 auto;
+	margin: 0 ;
 	max-width: 940px;
 	padding: 0 40px;
 }
@@ -57,7 +57,7 @@ ol, ul {
 }
 #navigation {
 	position: absolute;
-	right: 40px;
+	/*right: 40px;*/
 	bottom: 0px;
 }
 

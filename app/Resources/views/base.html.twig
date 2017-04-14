@@ -11,7 +11,7 @@
     <title>{% block site_title %}{% block page_title %}{% endblock page_title %} - {{ 'site_title' |trans }}{% endblock site_title %}</title>
 
     {% block styles %}
-        {% stylesheets
+        {% stylesheets filter='publish_dist_rewrite'
         '@LokosShopBundle/Resources/public/css/uikit.365publishing.min.css'
         '@LokosShopBundle/Resources/public/css/font-awesome.css'
         '@LokosShopBundle/Resources/public/css/menu.css'
@@ -71,7 +71,7 @@
                 </div>
             {% endblock nav %}
             <div id="primary-content">
-                <div class="uk-container uk-container-center">
+                <div class="uk-container">
                     {% block system_messages %}
                         {% for label, flashes in app.session.flashbag.all %}
                             {% for flash in flashes %}

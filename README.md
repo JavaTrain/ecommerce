@@ -1,69 +1,112 @@
-Symfony Standard Edition
-========================
+Requirements
+============
+**php 7.0**
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony
-application that you can use as the skeleton for your new applications.
+Deploying the system
+====================
 
-For details on how to download and get started with Symfony, see the
-[Installation][1] chapter of the Symfony Documentation.
+1. Dev environment
+-----------------
+docker image [ntlegend/php7](https://hub.docker.com/r/ntlegend/php7/)
 
-What's inside?
---------------
+2. Cloning project
+------------------
+    git clone git@bitbucket.org:mindk/alreadyon-365publish.git .
 
-The Symfony Standard Edition is configured with the following defaults:
+main branch **redev**
 
-  * An AppBundle you can use to start coding;
+3. Installing dependencies
+--------------------------
+All commands should be run in the docker
 
-  * Twig as the only configured template engine;
+    wget http://getcomposer.org/composer.phar
+    php composer.phar install --no-dev #production environment
+    php composer.phar install          #development environment
 
-  * Doctrine ORM/DBAL;
+4. Config Database
+------------------
+All commands should be run in the docker
 
-  * Swiftmailer;
+    php bin/console doctrine:migrations:migrate
 
-  * Annotations enabled for everything.
+5. Installing assets (just in case)
+-----------------------------------
+All commands should be run in the docker
 
-It comes pre-configured with the following bundles:
+    php bin/console assets:install --symlink
+    php bin/console assetic:dump --env=prod #production
+    php bin/console assetic:dump           #development
 
-  * **FrameworkBundle** - The core Symfony framework bundle
+6. Compile css (only for dev)
+-----------------------------
+All commands should be run in the docker
 
-  * [**SensioFrameworkExtraBundle**][6] - Adds several enhancements, including
-    template and routing annotation capability
+### Install
+    cd src/Mindk/PublishBundle/Resources/uikit
+    npm install gulp
+    npm install
 
-  * [**DoctrineBundle**][7] - Adds support for the Doctrine ORM
+### Compile
 
-  * [**TwigBundle**][8] - Adds support for the Twig templating engine
+    php bin/console assetic:watch
+    cd src/Mindk/PublishBundle/Resources/uikit
+    node ./node_modules/gulp/bin/gulp.js -t 365publishing
+    node ./node_modules/gulp/bin/gulp.js watch -t 365publishing
 
-  * [**SecurityBundle**][9] - Adds security by integrating Symfony's security
-    component
+### Theme customize
 
-  * [**SwiftmailerBundle**][10] - Adds support for Swiftmailer, a library for
-    sending emails
+    cd src/Mindk/PublishBundle/Resources/uikit
+    node ./node_modules/gulp/bin/gulp.js sync
 
-  * [**MonologBundle**][11] - Adds support for Monolog, a logging library
 
-  * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
-    the web debug toolbar
+7. Cron jobs
 
-  * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
-    configuring and working with Symfony distributions
 
-  * [**SensioGeneratorBundle**][13] (in dev/test env) - Adds code generation
-    capabilities
+Naming Conventions
+==================
 
-  * **DebugBundle** (in dev/test env) - Adds Debug and VarDumper component
-    integration
+1. Language Files
+-----------------
+Language file are grouped by scopes and(or) functionality.
+For example, all buttons are in the file buttons.en.yml. All translations of user's pages are in the users.en.yml
 
-All libraries and bundles included in the Symfony Standard Edition are
-released under the MIT or BSD license.
+Structure of language file must be the same as application logic
 
-Enjoy!
+    user:
+      registration:
+        form:
+          field1: Field1
+        messages:
+          success: Success message!
+          error: Error message!
 
-[1]:  https://symfony.com/doc/3.2/setup.html
-[6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
-[7]:  https://symfony.com/doc/3.2/doctrine.html
-[8]:  https://symfony.com/doc/3.2/templating.html
-[9]:  https://symfony.com/doc/3.2/security.html
-[10]: https://symfony.com/doc/3.2/email.html
-[11]: https://symfony.com/doc/3.2/logging.html
-[12]: https://symfony.com/doc/3.2/assetic/asset_management.html
-[13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
+
+
+
+
+Route name should start from **mindk_publish** contains user role, entry name and view (if exist) or action
+For example:
+
+    mindk_publish_admin_user_list
+    mindk_publish_admin_user_form
+    mindk_publish_admin_user_delete
+
+
+Request using
+=============
+Controller actions should get an Entity as input argument if it's necessary by functionality logic
+
+    mindk_user_item:
+         pattern:  /users/{id}
+         defaults: { _controller: MindkUserBundle:User:show }
+
+
+    public function showAction(User $user){ ... }; #Dependence injection
+
+
+Commit Messages
+===============
+There is an instruction of how to set commit message: [instruction](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit/)
+
+
+

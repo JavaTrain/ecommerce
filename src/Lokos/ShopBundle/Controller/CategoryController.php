@@ -7,6 +7,7 @@ use Lokos\ShopBundle\Entity\Category;
 use Lokos\ShopBundle\Repositories\CartRepository;
 use Lokos\ShopBundle\Repositories\CategoryRepository;
 use Lokos\ShopBundle\Repositories\ProductRepository;
+use Symfony\Bundle\FrameworkBundle\Routing\Router;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -19,17 +20,12 @@ class CategoryController extends BaseController
 {
 
     /**
-     * @param Request $request
-     *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function indexAction(Request $request)
+    public function indexAction()
     {
         /** @var CategoryRepository $repo */
         $repo = $this->container->get('doctrine')->getManager()->getRepository('LokosShopBundle:Category');
-        /** @var EntityManager $em */
-        $em = $this->container->get('doctrine.orm.entity_manager');
-
 
         /** @var Router $router */
         $router = $this->container->get('router');
@@ -37,39 +33,37 @@ class CategoryController extends BaseController
         $options = array(
             'decorate'      => true,
             'rootOpen'      => function ($tree) {
-                if(count($tree) && ($tree[0]['lvl'] == 0)){
+                if (count($tree) && ($tree[0]['lvl'] == 0)) {
                     return '<ul id="main-menu">';
-                }else{
+                } else {
                     return '<ul class="sub-menu">';
                 }
             },
-            'rootClose'     => '</ul>'."\n",
+            'rootClose'     => '</ul>',
             'childOpen'     => function ($tree) {
-                //                var_dump($tree);die;
-                if(!empty($tree['__children'])){
+                if (!empty($tree['__children'])) {
                     return '<li class="parent">';
                 }
                 return '<li>';
             },
-            'childClose'    => '</li>'."\n",
+            'childClose'    => '</li>',
             'nodeDecorator' => function ($node) use ($router) {
                 if (!empty($node['__children'])) {
-                    $res = '<a href="'.$router->generate('lokos_shop_homepage', ['id' => $node['id']]).'">'.$node['name'].'</a>'."\n";
+                    $res = '<a href="'.$router->generate(
+                            'lokos_shop_overview',
+                            ['id' => $node['id']]
+                        ).'">'.$node['name'].'</a>';
                 } else {
-                    $res = '<a href="'.$router->generate('lokos_shop_homepage', ['id' => $node['id']]).'">'.$node['name'].'</a>'."\n";
+                    $res = '<a href="'.$router->generate(
+                            'lokos_shop_overview',
+                            ['id' => $node['id']]
+                        ).'">'.$node['name'].'</a>';
                 }
                 return $res;
             }
         );
 
-
-
-
-
-        $tree = $repo->childrenHierarchy(null,false, $options);
-
-
-        return $this->render('LokosShopBundle:Category:index.html.twig', ['tree' => $tree]);
+        return $this->render('LokosShopBundle:Category:index.html.twig', ['tree' => $repo->childrenHierarchy(null, false, $options)]);
     }
 
 }

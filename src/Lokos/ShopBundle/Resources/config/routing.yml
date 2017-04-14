@@ -1,3 +1,16 @@
 lokos_shop_homepage:
     path:     /
     defaults: { _controller: LokosShopBundle:Product:index }
+
+lokos_shop_overview:
+    path: /categories/{id}/items/
+    defaults: { _controller: LokosShopBundle:Product:overview }
+    requirements:
+        id: \d+
+
+lokos_shop_item_detail:
+    path: /categories/{catId}/items/{itemId}
+    defaults: { _controller: LokosShopBundle:Product:detail }
+    requirements:
+      catId: \d+
+      itemId: \d+
